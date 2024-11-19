@@ -119,7 +119,7 @@
 				}
 				function upgrade3() {
 					if (nombre_de_clics >= 500) {
-						upgrade.textContent = "Upgrade du clic : -1 000 000€ puis +200 par clic";
+						upgrade.textContent = "Upgrade du clic : -1 000 000€ puis +2000 par clic";
 						cliquer.setAttribute("onclick", "cliquer10()");
 						upgrade.setAttribute("onclick", "upgrade4()");
 						nombre_de_clics -= 500;
@@ -139,9 +139,8 @@
 				}
 				function upgrade5() {
 					if (nombre_de_clics >= 100000000) {
-						upgrade.textContent = "Upgrade du clic : -100 000€ puis +90000 par clic";
+						upgrade.textContent = "Upgrades au maximum";
 						cliquer.setAttribute("onclick", "cliquer90000()");
-						upgrade.setAttribute("onclick", "upgrade5()");
 						nombre_de_clics -= 100000000;
 						console.log('upgrade5');
 						actualiser();
@@ -164,7 +163,7 @@
 					actualiser();
 				}
 				function cliquer200() {
-					nombre_de_clics += 200;
+					nombre_de_clics += 2000;
 					actualiser();
 				}
 				function cliquer90000() {
