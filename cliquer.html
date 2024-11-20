@@ -17,6 +17,7 @@
 				background-color: black;
 				text-align: center;
 				touch-action: manipulation;
+				margin-top: 100px;
 			}
 			p {
 				color: darkviolet;
@@ -40,16 +41,26 @@
 				border-color: darkviolet;
 				border-width: 25px;
 			}
+			.barre_frontale {
+				position: sticky;
+		        width: 100%;
+				background-color: black;
+				top: 0;
+
+			}
 		</style>
 	</head>
 	<body>
+		<div class="barre_frontale" top=0px>
+			<h2>Balance : <span id="nombre_à_changer">0</span> €</h2><h4><span id="clics_par_seconde">0</span> € par seconde</h4>
+		</div>
 		<br>
-		<p id="texteDeBase">Ce jeu est un cliquer. Le but est de gagner des sous. Pour cela, il y a plusieurs facons :<br>1) Cliquer sur le bouton pour gagner des sous par clics.<br>2) Acheter des bâtiments (une baraque à frite, un petit magasin...) pour gagner des sous sans rien faire.</p>
+		<p id="texteDeBase">Ce jeu est un cliquer. Le but est de gagner des sous. Pour cela, il y a plusieurs facons :<br>1. Cliquer sur le bouton pour gagner des sous par clics.<br>2. Acheter des bâtiments (une baraque à frite, un petit magasin...) pour gagner des sous sans rien faire.</p>
 		<div id="gauche" class="gauche">
 			<button onclick="
-			cliquer1()" id="cliquer" class="cliquer"><img alt="Bouton représantant une souris d'ordinateur, pour cliquer et gagner des sous"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdOLDcSWJsR2MMKGPJpkDQB16vB4mRzSCcVXaULl0LMB_5ZkK8mGSqHUi2Hdp-F2RMuTA&usqp=CAU"></button><br>
+			cliquer1()" id="cliquer" class="cliquer"><img alt="Bouton represantant une souris d'ordinateur, pour cliquer et gagner des sous"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdOLDcSWJsR2MMKGPJpkDQB16vB4mRzSCcVXaULl0LMB_5ZkK8mGSqHUi2Hdp-F2RMuTA&usqp=CAU"></button><br>
 			<button onclick="upgrade1()" id="upgrade">Upgrade du clic : -20€ puis +2 par clic</button>
-			<h2>Balance : <span id="nombre_à_changer">0</span> €</h2><h4><span id="clics_par_seconde">0</span> € par seconde</h4>
+			<br>
 			<br>
 			<button onclick="baraque_a_frites()">Acheter une baraque à frites (-55€ puis + 1€ par seconde)</button><h3><span id="nombre_de_baraques_a_frites">0</span> baraques à frites achetées.</h3>
 			<br>
