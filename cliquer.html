@@ -62,20 +62,28 @@
 			<button onclick="upgrade1()" id="upgrade">Upgrade du clic : -20€ puis +2 par clic</button>
 			<br>
 			<br>
-			<button onclick="baraque_a_frites()">Acheter une baraque à frites (-55€ puis + 1€ par seconde)</button><h3><span id="nombre_de_baraques_a_frites">0</span> baraques à frites achetées.</h3>
+
+			<button onclick="baraque_a_frites0()" style="background-color: darkviolet;">Acheter une baraque à frites (-55€ puis + 1€ par seconde)</button><h3><span id="nombre_de_baraques_a_frites">0</span> baraques à frites achetées.</h3>
 			<br>
-			<button onclick="petitMagasin();">Acheter un petit magasin (-100€ puis + 2€ par seconde)</button><h3><span id="nombre_de_petitmagasins">0</span> petits magasins achetés.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_petitMagasin">Acheter un petit magasin (-100€ puis + 2€ par seconde)</button><h3><span id="nombre_de_petitmagasins">0</span> petits magasins achetés.</h3>
 			<br>
-			<button onclick="grandMagasin();">Acheter un grand magasin (-500€ puis + 12€ par seconde)</button><h3><span id="nombre_de_grandsmagasins">0</span> grands magasins achetés.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_grandMagasin">Acheter un grand magasin (-500€ puis + 12€ par seconde)</button><h3><span id="nombre_de_grandsmagasins">0</span> grands magasins achetés.</h3>
 			<br>
-			<button onclick="petiteUsine()"> Acheter une petite usine (-10 000€ puis + 200€ par seconde)</button><h3><span id="nombre_de_petitesusines">0</span> petites usines achetées.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_petiteUsine"> Acheter une petite usine (-10 000€ puis + 200€ par seconde)</button><h3><span id="nombre_de_petitesusines">0</span> petites usines achetées.</h3>
 			<br>
-			<button onclick="grandeUsine()">Acheter une grande usine (-100 000€ puis + 3 000€ par seconde)</button><h3><span id="nombre_de_grandesusines">0</span> grandes usines achetées.</h3>
-			<button onclick="aeroport()">Acheter un aéroport (-5 000 000€ puis + 70 000€ par seconde)</button><h3><span id="nombre_d_aeroports">0</span> aéroports achetés.</h3>
-			<button onclick="aeroportInter()">Acheter un aéroport international (-50 000 000€ puis + 1 000 000€ par seconde)</button><h3><span id="nombre_d_aeroports_inter">0</span> aéroports internationaux achetés.</h3>
-			<button onclick="centraleNucleaire()">Acheter une centrale nucléaire (-100 000 000 000 000€ (100 mille milliards) puis + 50 000 000 000€ (50 milliards ) par seconde)</button><h3><span id="nombre_de_centraleNucleaire">0</span> centrales nucléaires achetées.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_grandeUsine">Acheter une grande usine (-100 000€ puis + 3 000€ par seconde)</button><h3><span id="nombre_de_grandesusines">0</span> grandes usines achetées.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_aeroport">Acheter un aéroport (-5 000 000€ puis + 70 000€ par seconde)</button><h3><span id="nombre_d_aeroports">0</span> aéroports achetés.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_aeroportInter">Acheter un aéroport international (-50 000 000€ puis + 1 000 000€ par seconde)</button><h3><span id="nombre_d_aeroports_inter">0</span> aéroports internationaux achetés.</h3>
+			
+			<button onclick="" style="background-color: gray;" id="bouton_centraleNucleaire">Acheter une centrale nucléaire (-100 000 000 000 000€ (100 mille milliards) puis + 50 000 000 000€ (50 milliards ) par seconde)</button><h3><span id="nombre_de_centraleNucleaire">0</span> centrales nucléaires achetées.</h3>
 			<br><br><br><br>
-			<!--<h2></h2>
+			<!-<h2></h2>
 			<input type="number" id="in_options_dev" placeholder="Nombre +/- à ajouter"><button onclick="valid_options_dev()">Valider</button><br>
 			<button onclick="plusbcp();">Fin du jeu</button><br>-->
 		</div>
@@ -104,6 +112,11 @@
 				let cliquer = document.getElementById('cliquer');
 				let input = document.getElementById('in_options_dev');
 				let ajout = 0;
+				let bouton_petitMagasin = document.getElementById("bouton_petitMagasin")
+				let bouton_grandMagasin = document.getElementById("bouton_grandMagasin")
+				let bouton_petiteUsine = document.getElementById("bouton_petiteUsine")
+				let bouton_grandeUsine = document.getElementById("bouton_grandeUsine")
+
 				setTimeout(Fin_de_jeu, 5000)
 				function Fin_de_jeu() {
 					if (nombre_de_clics >= 100000000000000000000) {
@@ -186,6 +199,7 @@
 					nombre_de_clics += 90000;
 					actualiser();
 				}
+
 				setTimeout(texteDeBase, 60000)
 				function texteDeBase() {
 					let texteDeBase = document.getElementById("texteDeBase")
@@ -209,6 +223,20 @@
 				}
 				
 				//baraque à frites
+				function baraque_a_frites0() {
+					if (nombre_de_clics >= 55) {
+						nombre_de_clics -= 55;
+						nombre_de_baraques_a_frites += 1;
+						actualiser();
+						baraque_a_frites1();
+						clics_par_seconde += 1;
+						actualiser2();
+						console.log("Une baraque a frites à été achetée")
+						bouton_petitMagasin.setAttribute("style", "background-color: darkviolet;")
+						bouton_petitMagasin.setAttribute("onclick", "petitMagasin0()")
+						
+					}
+				}
 				function baraque_a_frites() {
 					if (nombre_de_clics >= 55) {
 						nombre_de_clics -= 55;
@@ -218,7 +246,6 @@
 						clics_par_seconde += 1;
 						actualiser2();
 						console.log("Une baraque à frites à été achetée")
-
 					}
 				}
 				function baraque_a_frites1() {
@@ -228,6 +255,19 @@
 				}
 
 				// Petit Magasin
+				function petitMagasin0() {
+					if (nombre_de_clics >= 100) {
+						nombre_de_clics -= 100;
+						nombre_de_petitmagasins += 1;
+						actualiser();
+						lepetitmagasin1();
+						clics_par_seconde += 2;
+						actualiser2();
+						console.log("Un petit magasin à été acheté")
+						bouton_grandMagasin.setAttribute("style", "background-color: darkviolet;")
+						bouton_grandMagasin.setAttribute("onclick", "grandMagasin0()")
+					}	
+				}
 				function petitMagasin() {
 					if (nombre_de_clics >= 100) {
 						nombre_de_clics -= 100;
@@ -246,6 +286,19 @@
 				}
 
 				//grand Magasin
+				function grandMagasin0() {
+					if (nombre_de_clics >= 500) {
+						nombre_de_clics -= 500;
+						nombre_de_grandsmagasins += 1;
+						actualiser();
+						legrandmagasin1();
+						clics_par_seconde += 12;
+						actualiser2();
+						console.log("Un grand magasin à été acheté")
+						bouton_petiteUsine.setAttribute("style", "background-color: darkviolet;")
+						bouton_petiteUsine.setAttribute("onclick", "petiteUsine0()")
+					}
+				}
 				function grandMagasin() {
 					if (nombre_de_clics >= 500) {
 						nombre_de_clics -= 500;
@@ -264,7 +317,19 @@
 				}
 
 				//petite usine
-				function petiteUsine() {
+				function petiteUsine0() {
+					if (nombre_de_clics >= 10000) {
+						nombre_de_clics -= 10000;
+						nombre_de_petitesusines += 1;
+						actualiser();
+						petiteUsine1();
+						clics_par_seconde += 200;
+						actualiser2();
+						console.log("Une petite usine à été achetée")
+						bouton_grandeUsine.setAttribute("style", "background-color: darkviolet;")
+						bouton_grandeUsine.setAttribute("onclick", "grandeUsine0()")
+					}
+				}function petiteUsine() {
 					if (nombre_de_clics >= 10000) {
 						nombre_de_clics -= 10000;
 						nombre_de_petitesusines += 1;
@@ -283,6 +348,19 @@
 
 
 				//grande usine
+				function grandeUsine0() {
+					if (nombre_de_clics >= 100000) {
+						nombre_de_clics -= 100000;
+						nombre_de_grandesusines += 1;
+						actualiser();
+						grandeUsine1();
+						clics_par_seconde += 3000;
+						actualiser2();
+						console.log("Une grande usine à été achetée")
+						bouton_aeroport.setAttribute("style", "background-color: darkviolet;")
+						bouton_aeroport.setAttribute("onclick", "aeroport0()")
+					}
+				}
 				function grandeUsine() {
 					if (nombre_de_clics >= 100000) {
 						nombre_de_clics -= 100000;
@@ -302,7 +380,20 @@
 
 
 
-				//aéroport
+				//aeroport
+				function aeroport0() {
+					if (nombre_de_clics >= 5000000) {
+						nombre_de_clics -= 5000000;
+						nombre_d_aeroports += 1;
+						actualiser();
+						aeroport1();
+						clics_par_seconde += 70000;
+						actualiser2();
+						console.log("Un aéroport à été acheté")
+						bouton_aeroportInter.setAttribute("style", "background-color: darkviolet;")
+						bouton_aeroportInter.setAttribute("onclick", "aeroportInter0()")
+					}
+				}
 				function aeroport() {
 					if (nombre_de_clics >= 5000000) {
 						nombre_de_clics -= 5000000;
@@ -321,7 +412,20 @@
 				}
 				
 				
-				//aéroport international
+				//aeroport international
+				function aeroportInter0() {
+					if (nombre_de_clics >= 50000000) {
+						nombre_de_clics -= 50000000;
+						nombre_d_aeroportsInter += 1;
+						actualiser();
+						aeroportInter1();
+						clics_par_seconde += 1000000;
+						actualiser2();
+						console.log("Un aéroport internationnal à été acheté")
+						bouton_centraleNucleaire.setAttribute("style", "background-color: darkviolet;")
+						bouton_centraleNucleaire.setAttribute("onclick", "centraleNucleaire0()")
+					}
+				}
 				function aeroportInter() {
 					if (nombre_de_clics >= 50000000) {
 						nombre_de_clics -= 50000000;
@@ -339,7 +443,18 @@
 					setTimeout(aeroportInter1, 1000);
 				}
 				
-				//centrale nucléaire
+				//centrale nucleaire
+				function centraleNucleaire0() {
+					if (nombre_de_clics >= 100000000000000) {
+						nombre_de_clics -= 100000000000000;
+						nombre_de_centraleNucleaire += 1;
+						actualiser();
+						centraleNucleaire1();
+						clics_par_seconde += 50000000000;
+						actualiser2();
+						console.log("Une centrale nucléaire à été achetée")
+					}
+				}
 				function centraleNucleaire() {
 					if (nombre_de_clics >= 100000000000000) {
 						nombre_de_clics -= 100000000000000;
@@ -360,8 +475,10 @@
 				//option dev
 				function valid_options_dev() {
 					ajout = parseInt(input.value);
-					nombre_de_clics += ajout;
-					actualiser();
+					if (nombre_de_clics + ajout >= 0) {
+						nombre_de_clics += ajout;
+						actualiser();
+					}	
 				}
 				function plusbcp() {
 					nombre_de_clics += 100000000000000000000;
