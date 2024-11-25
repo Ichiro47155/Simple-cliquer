@@ -1,0 +1,55 @@
+h2 {
+    color: white;
+    font-size: 400%;
+
+}
+h3 {
+    color: palegreen;
+    font-size: 200%;
+}
+body {
+    background-color: black;
+    text-align: center;
+    touch-action: manipulation;
+    margin-top: 100px;
+}
+p {
+    color: darkviolet;
+    font-size: 200%;
+}
+button, input {
+    color: floralwhite;
+    background-color: darkviolet;
+    font-size: 250%;
+
+}
+#gauche {
+    text-align: left;
+}
+h4 {
+    color: white;
+    font-size: 350%;
+}
+.cliquer {
+    border-color: darkviolet;
+    border-width: 25px;
+}
+.barre_frontale {
+    position: sticky;
+    width: 100%;
+    background-color: black;
+    top: 0;
+
+}
+.my-popup {
+    background-color: black;
+    color: white;
+}
+.my-confirm {
+    background-color: green;
+    color: white;
+}
+.my-cancel {
+    background-color: red;
+    color: white;
+}
