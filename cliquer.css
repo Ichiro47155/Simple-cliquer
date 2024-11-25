@@ -41,15 +41,3 @@ h4 {
     top: 0;
 
 }
-.my-popup {
-    background-color: black;
-    color: white;
-}
-.my-confirm {
-    background-color: green;
-    color: white;
-}
-.my-cancel {
-    background-color: red;
-    color: white;
-}
