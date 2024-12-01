@@ -1,3 +1,17 @@
+if (localStorage.getItem("deja_venu?") != "true") {
+	localStorage.setItem("nombre_de_clics", 0);
+	localStorage.setItem("clics_par_seconde", 0);
+	localStorage.setItem("nombre_de_baraques_a_frites", 0);
+	localStorage.setItem("nombre_de_petitmagasins", 0);
+	localStorage.setItem("nombre_de_grandsmagasins", 0);
+	localStorage.setItem("nombre_de_petitesusines", 0);
+	localStorage.setItem("nombre_de_grandesusines", 0);
+	localStorage.setItem("nombre_d_aeroports", 0);
+	localStorage.setItem("nombre_d_aeroportsInter", 0);
+	localStorage.setItem("nombre_de_centrale_a_charbon", 0);
+	localStorage.setItem("nombre_de_centraleNucleaire", 0);
+	localStorage.setItem("nv_upgrade", 0);
+}
 let nombre_de_clics = 0;
 let nombre_de_grandsmagasins = 0;
 let affichage_nombre_de_grandsmagasins = document.getElementById("nombre_de_grandsmagasins");
@@ -76,47 +90,47 @@ function getAvancée() {
 	nombre_de_centraleNucleaire = parseInt(localStorage.getItem("nombre_de_centraleNucleaire"));
 	nv_upgrade = localStorage.getItem('nv_upgrade')
 	if (nombre_de_baraques_a_frites >= 1) {
-		bouton_petitMagasin.setAttribute("style", "background-color: darkviolet;")
-		bouton_petitMagasin.setAttribute("onclick", "petitMagasin0()")
+		bouton_petitMagasin.setAttribute("style", "background-color: darkviolet;");
+		bouton_petitMagasin.setAttribute("onclick", "petitMagasin0()");
 	}
 	if (nombre_de_petitmagasins >= 1) {
-		bouton_grandMagasin.setAttribute("style", "background-color: darkviolet;")
-		bouton_grandMagasin.setAttribute("onclick", "grandMagasin0()")
+		bouton_grandMagasin.setAttribute("style", "background-color: darkviolet;");
+		bouton_grandMagasin.setAttribute("onclick", "grandMagasin0()");
 	}
 	if (nombre_de_grandsmagasins >= 1) {
-		bouton_petiteUsine.setAttribute("style", "background-color: darkviolet;")
-		bouton_petiteUsine.setAttribute("onclick", "petiteUsine0()")
+		bouton_petiteUsine.setAttribute("style", "background-color: darkviolet;");
+		bouton_petiteUsine.setAttribute("onclick", "petiteUsine0()");
 	}
 	if (nombre_de_petitesusines >= 1) {
-		bouton_grandeUsine.setAttribute("style", "background-color: darkviolet;")
-		bouton_grandeUsine.setAttribute("onclick", "grandeUsine0()")
+		bouton_grandeUsine.setAttribute("style", "background-color: darkviolet;");
+		bouton_grandeUsine.setAttribute("onclick", "grandeUsine0()");
 	}
 	if (nombre_de_grandesusines >= 1) {
-		bouton_aeroport.setAttribute("style", "background-color: darkviolet;")
-		bouton_aeroport.setAttribute("onclick", "aeroport0()")
+		bouton_aeroport.setAttribute("style", "background-color: darkviolet;");
+		bouton_aeroport.setAttribute("onclick", "aeroport0()");
 	}
 	if (nombre_d_aeroports >= 1) {
-		bouton_aeroportInter.setAttribute("style", "background-color: darkviolet;")
-		bouton_aeroportInter.setAttribute("onclick", "aeroportInter0()")
+		bouton_aeroportInter.setAttribute("style", "background-color: darkviolet;");
+		bouton_aeroportInter.setAttribute("onclick", "aeroportInter0()");
 	}
 	if (nombre_d_aeroportsInter >= 1) {
-		bouton_centraleACharbon.setAttribute("style", "background-color: darkviolet;")
-		bouton_centraleACharbon.setAttribute("onclick", "centrale_a_charbon0()")
+		bouton_centraleACharbon.setAttribute("style", "background-color: darkviolet;");
+		bouton_centraleACharbon.setAttribute("onclick", "centrale_a_charbon0()");
 	}
 	if (nombre_de_centrale_a_charbon >= 1) {
-		bouton_centraleNucleaire.setAttribute("style", "background-color: darkviolet;")
-		bouton_centraleNucleaire.setAttribute("onclick", "centraleNucleaire0()")
+		bouton_centraleNucleaire.setAttribute("style", "background-color: darkviolet;");
+		bouton_centraleNucleaire.setAttribute("onclick", "centraleNucleaire0()");
 	}
 	if (nv_upgrade == 1) {
-		upgrade1()
+		upgrade1();
 	}else if (nv_upgrade == 2) {
-		upgrade2()
+		upgrade2();
 	}else if (nv_upgrade == 3) {
-		upgrade3()
+		upgrade3();
 	}else if (nv_upgrade == 4) {
-		upgrade4()
+		upgrade4();
 	}else if (nv_upgrade == 5) {
-		upgrade5()
+		upgrade5();
 	}else {
 		upgrade.textContent = "Upgrade du clic : -20€ puis +2 par clic";
 		cliquer.setAttribute("onclick", "cliquer1()");
@@ -157,18 +171,18 @@ function reset() {
 	bouton_centraleNucleaire.setAttribute("style", "background-color: gray;")
 	bouton_centraleNucleaire.setAttribute("onclick", "")
 	//reset du stockage
-	localStorage.removeItem("nombre_de_clics", nombre_de_clics);
-	localStorage.removeItem("clics_par_seconde", clics_par_seconde);
-	localStorage.removeItem("nombre_de_baraques_a_frites", nombre_de_baraques_a_frites);
-	localStorage.removeItem("nombre_de_petitmagasins", nombre_de_petitmagasins);
-	localStorage.removeItem("nombre_de_grandsmagasins", nombre_de_grandsmagasins);
-	localStorage.removeItem("nombre_de_petitesusines", nombre_de_petitesusines);
-	localStorage.removeItem("nombre_de_grandesusines", nombre_de_grandesusines);
-	localStorage.removeItem("nombre_d_aeroports", nombre_d_aeroports);
-	localStorage.removeItem("nombre_d_aeroportsInter", nombre_d_aeroportsInter);
-	localStorage.removeItem("nombre_de_centrale_a_charbon", nombre_de_centrale_a_charbon);
-	localStorage.removeItem("nombre_de_centraleNucleaire", nombre_de_centraleNucleaire);
-	localStorage.removeItem("nv_upgrade", nv_upgrade)
+	localStorage.setItem("nombre_de_clics", 0);
+	localStorage.setItem("clics_par_seconde", 0);
+	localStorage.setItem("nombre_de_baraques_a_frites", 0);
+	localStorage.setItem("nombre_de_petitmagasins", 0);
+	localStorage.setItem("nombre_de_grandsmagasins", 0);
+	localStorage.setItem("nombre_de_petitesusines", 0);
+	localStorage.setItem("nombre_de_grandesusines", 0);
+	localStorage.setItem("nombre_d_aeroports", 0);
+	localStorage.setItem("nombre_d_aeroportsInter", 0);
+	localStorage.setItem("nombre_de_centrale_a_charbon", 0);
+	localStorage.setItem("nombre_de_centraleNucleaire", 0);
+	localStorage.setItem("nv_upgrade", 0)
 	actualiser();
 	actualiser2();
     console.clear();
@@ -207,6 +221,7 @@ function sauvegarder() {
 	localStorage.setItem("nombre_de_centrale_a_charbon", nombre_de_centrale_a_charbon);
 	localStorage.setItem("nombre_de_centraleNucleaire", nombre_de_centraleNucleaire);
 	localStorage.setItem("nv_upgrade", nv_upgrade);
+	localStorage.setItem("deja_venu?", "true")
 	console.log("sauvegarde effectuée")
 }
 function upgrade1() {
