@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+}
+.retour {
+    color: white;
+    background-color: darkviolet;
+    font-size: 150%;
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
+p {
+    position: relative;
+    text-align: center;
+    top: 90px;
+    color: white;
+    font-size: 200%;
+}
+h1 {
+    position: relative;
+    text-align: center;
+    top: 85px;
+    color: white;
+    font-size: 250%;
+}
